@@ -1,0 +1,159 @@
+CREATE TABLE animal(
+                       id SERIAL NOT NULL ,
+                       age INT NOT NULL ,
+                       first_name VARCHAR (10)NOT NULL,
+                       colour VARCHAR NOT NULL ,
+                       weight INT NOT NULL
+);
+INSERT INTO animal(age ,first_name,colour, weight)
+VALUES (3,'Sheep','White',30),
+       (8,'Horse','Black',30),
+       (5,'Cow','Grey',30);
+
+SELECT * FROM animal ORDER BY age ASC ;
+
+
+
+CREATE TABLE cars(
+                     id SERIAL NOT NULL ,
+                     first_name VARCHAR(10) NOT NULL ,
+                     last_name VARCHAR (10) NOT NULL ,
+                     weight VARCHAR NOT NULL ,
+                     colour VARCHAR NOT NULL ,
+                     volume VARCHAR NOT NULL ,
+                     price VARCHAR NOT NULL
+);
+INSERT INTO cars(first_name, last_name, weight, colour, volume, price)
+VALUES ('Lexus','570','3t','Black','5l','20000$'),
+       ('BMW','E34','1t','White','3l','7000$'),
+       ('Audi','A6','1,5t','Black','3l','4000$'),
+       ('Lanos','Daewo','1t','read','1,8l','2000$'),
+       ('Musso','SsangYong','2,5t','Blue','5l','3000$');
+
+SELECT * FROM cars ORDER BY colour ASC ;
+
+CREATE TABLE students(
+                         id Int NOT NULL ,
+                         first_name VARCHAR(200)NOT NULL ,
+                         last_name VARCHAR(200)NOT NULL ,
+                         age INT NOT NULL ,
+                         height VARCHAR NOT NULL ,
+                         gender VARCHAR NOT NULL ,
+                         data_of_birth VARCHAR NOT NULL
+);
+INSERT INTO students(id, first_name, last_name, age, height, gender, data_of_birth)
+VALUES (1,'Raxim','Kurbanov',19,'1,80m','male','25-04-2003'),
+       (2,'Muxammed','Batyrov',19,'1,85m','male','01-01-2003'),
+       (3,'Kubat','Ashymjanov',16,'1,80','male','18-09-2005'),
+       (4,'Nurisa','Mamiraimovna',19,'1,60','female','16-01-2003'),
+       (5,'Aisuluu','Batyrova',20,'1,65','female','10-08-2001');
+SELECT * FROM students ORDER BY id DESC ;
+
+CREATE TABLE clothes(
+                        razmer INT NOT NULL ,
+                        first_name VARCHAR NOT NULL ,
+                        last_name VARCHAR NOT NULL ,
+                        colour VARCHAR NOT NULL
+);
+
+INSERT INTO clothes(razmer, first_name, last_name, colour)
+VALUES (52,'Futbolka','SPORT','read'),
+       (54,'Spartifka','NIKE','black'),
+       (56,'Jeans','ADIDAS','white');
+
+SELECT * FROM clothes;
+SELECT first_name FROM clothes;
+
+CREATE TABLE city(
+                     id SERIAL NOT NULL ,
+                     first_name VARCHAR(20) NOT NULL ,
+                     last_name VARCHAR(20) NOT NULL ,
+                     peoples VARCHAR NOT NULL ,
+                     language VARCHAR NOT NULL ,
+                     region VARCHAR NOT NULL,
+                     currency VARCHAR NOT NULL
+);
+
+INSERT INTO city(first_name, last_name, peoples, language, region,currency)
+VALUES ('Kurgyzstan','Bishkek','6,5mln','Kyrgyz',7,'som'),
+       ('Ozbekstan','Tashkent','35mln','Ozbek',10,'tenge'),
+       ('Kazakstan','Nur-Sultan','19mln','Kazak',14,'sum'),
+       ('Russia','Moskva','143mln','Rus',14,'rubil');
+
+SELECT * FROM city WHERE currency = 'som';
+
+
+CREATE TABLE tree(
+                     id SERIAL NOT NULL ,
+                     first_name VARCHAR(30) NOT NULL,
+                     age INT NOT NULL ,
+                     height VARCHAR NOT NULL
+);
+INSERT INTO tree(FIRST_NAME, AGE, HEIGHT)
+VALUES ('Tal',15,'15m'),
+       ('Archa',40,'22m'),
+       ('Terek',8,'28m'),
+       ('Oruk',100,'10m');
+
+SELECT * FROM  tree ORDER BY first_name LIMIT 2;
+
+CREATE TABLE equaticAnimals(
+                               id SERIAL NOT NULL ,
+                               first_name VARCHAR NOT NULL ,
+                               age INT NOT NULL ,
+                               weight VARCHAR NOT NULL
+);
+
+INSERT INTO equaticAnimals(first_name, age, weight)
+VALUES ('Akula',4,'150kg'),
+       ('Delfin',3,'40kg'),
+       ('Osetr',6,'25kg');
+
+SELECT * FROM equaticAnimals;
+
+CREATE TABLE region(
+                       id INT NOT NULL ,
+                       first_name VARCHAR NOT NULL ,
+                       peoples VARCHAR NOT NULL ,
+                       area VARCHAR NOT NULL
+);
+drop table region;
+INSERT INTO region(id, first_name, peoples, area)
+VALUES (1,'Batken','550min','16,9m/km'),
+       (2,'Osh','1,1mln','29,2m/km'),
+       (3,'Jalal-Abad','1mln','34m/km'),
+       (4,'Talas','300min','11,4m/km'),
+       (5,'Naryn','290min','45,5m/km'),
+       (6,'Yssyk-Kul','500min','43m/km'),
+       (7,'Chui','950min','20,2m/km');
+
+SELECT * FROM region;
+
+CREATE TABLE birds(
+                      id SERIAL2 NOT NULL,
+                      first_name VARCHAR(10)NOT NULL ,
+                      age INT NOT NULL
+);
+drop table birds;
+INSERT INTO birds(first_name, age)
+VALUES ('Burkut',4),
+       ('Akkuu',2),
+       ('Koguchkon',3);
+SELECT * FROM birds ORDER BY age ASC;
+
+CREATE TABLE teacher(
+                        id SERIAL NOT NULL ,
+                        first_name VARCHAR(30) NOT NULL ,
+                        last_name VARCHAR(20) NOT NULL ,
+                        gender VARCHAR NOT NULL ,
+                        age INT  NOT NULL ,
+                        place_of_birth VARCHAR NOT NULL
+);
+INSERT INTO teacher(first_name, last_name, gender, age, place_of_birth)
+VALUES ('Zamir','Sabyrjanov','male',29,'Yssyk-Kul'),
+       ('Beksultan','Mamatkadyr uulu','male',18,'Osh'),
+       ('Muktar','Kubanov','male',22,'Jalal-Abad'),
+       ('Dinara','Bakurova','female',34,'Bishkek');
+
+SELECT * FROM teacher;
+SELECT * FROM teacher WHERE age = 29;
